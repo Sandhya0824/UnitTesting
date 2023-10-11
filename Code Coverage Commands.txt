@@ -1,0 +1,140 @@
+PS C:\Dev\UnitTesting\UnitTestingBank\BankTests>
+PS C:\Dev\UnitTesting\UnitTestingBank\BankTests> cd C:\Dev\UnitTesting\UnitTestingBank\BankTests\BankAccountTests.cs
+cd : Cannot find path 'C:\Dev\UnitTesting\UnitTestingBank\BankTests\BankAccountTests.cs' because it does not exist.
+At line:1 char:1
++ cd C:\Dev\UnitTesting\UnitTestingBank\BankTests\BankAccountTests.cs
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Dev\UnitTest...AccountTests.cs:String) [Set-Location], ItemNotFoundE
+   xception
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+
+PS C:\Dev\UnitTesting\UnitTestingBank\BankTests> dotnet tool install -g coverlet.console
+You can invoke the tool using the following command: coverlet
+Tool 'coverlet.console' (version '6.0.0') was successfully installed.
+PS C:\Dev\UnitTesting\UnitTestingBank\BankTests> dotnet build
+MSBuild version 17.6.8+c70978d4d for .NET
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+C:\Dev\UnitTesting\UnitTestingBank\UnitTestingBank\BankAccount.cs(11,17): warning CS8618: Non-nullable field '_customer
+Name' must contain a non-null value when exiting constructor. Consider declaring the field as nullable. [C:\Dev\UnitTes
+ting\UnitTestingBank\UnitTestingBank\UnitTestingBank.csproj]
+  UnitTestingBank -> C:\Dev\UnitTesting\UnitTestingBank\UnitTestingBank\bin\Debug\net7.0\UnitTestingBank.dll
+  BankTests -> C:\Dev\UnitTesting\UnitTestingBank\BankTests\bin\Debug\net7.0\BankTests.dll
+
+Build succeeded.
+
+C:\Dev\UnitTesting\UnitTestingBank\UnitTestingBank\BankAccount.cs(11,17): warning CS8618: Non-nullable field '_customer
+Name' must contain a non-null value when exiting constructor. Consider declaring the field as nullable. [C:\Dev\UnitTes
+ting\UnitTestingBank\UnitTestingBank\UnitTestingBank.csproj]
+    1 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:05.39
+PS C:\Dev\UnitTesting\UnitTestingBank\BankTests> coverlet .\bin\Debug\net7.0\BankTests.dll --target "dotnet" --targetargs "test --no-build"
+Test run for C:\Dev\UnitTesting\UnitTestingBank\BankTests\bin\Debug\net7.0\BankTests.dll (.NETCoreApp,Version=v7.0)
+Microsoft (R) Test Execution Command Line Tool Version 17.6.3 (x64)
+Copyright (c) Microsoft Corporation.  All rights reserved.
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+Passed!  - Failed:     0, Passed:     3, Skipped:     0, Total:     3, Duration: 39 ms - BankTests.dll (net7.0)
+
+Calculating coverage result...
+  Generating report 'C:\Dev\UnitTesting\UnitTestingBank\BankTests\coverage.json'
++-----------------+--------+--------+--------+
+| Module          | Line   | Branch | Method |
++-----------------+--------+--------+--------+
+| UnitTestingBank | 51.72% | 66.66% | 42.85% |
++-----------------+--------+--------+--------+
+
++---------+--------+--------+--------+
+|         | Line   | Branch | Method |
++---------+--------+--------+--------+
+| Total   | 51.72% | 66.66% | 42.85% |
++---------+--------+--------+--------+
+| Average | 51.72% | 66.66% | 42.85% |
++---------+--------+--------+--------+
+
+PS C:\Dev\UnitTesting\UnitTestingBank\BankTests> coverlet .\bin\Debug\net7.0\BankTests.dll --target "dotnet" --targetargs "test --no-build" --exclude "[*]UnitTestingBank*"
+Test run for C:\Dev\UnitTesting\UnitTestingBank\BankTests\bin\Debug\net7.0\BankTests.dll (.NETCoreApp,Version=v7.0)
+Microsoft (R) Test Execution Command Line Tool Version 17.6.3 (x64)
+Copyright (c) Microsoft Corporation.  All rights reserved.
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+Passed!  - Failed:     0, Passed:     3, Skipped:     0, Total:     3, Duration: 55 ms - BankTests.dll (net7.0)
+
+Calculating coverage result...
+  Generating report 'C:\Dev\UnitTesting\UnitTestingBank\BankTests\coverage.json'
++-----------------+------+--------+--------+
+| Module          | Line | Branch | Method |
++-----------------+------+--------+--------+
+| UnitTestingBank | 100% | 100%   | 100%   |
++-----------------+------+--------+--------+
+
++---------+------+--------+--------+
+|         | Line | Branch | Method |
++---------+------+--------+--------+
+| Total   | 100% | 100%   | 100%   |
++---------+------+--------+--------+
+| Average | 100% | 100%   | 100%   |
++---------+------+--------+--------+
+
+PS C:\Dev\UnitTesting\UnitTestingBank\BankTests> coverlet .\bin\Debug\net7.0\BankTests.dll --target "dotnet" --targetargs "test --no-build"
+Test run for C:\Dev\UnitTesting\UnitTestingBank\BankTests\bin\Debug\net7.0\BankTests.dll (.NETCoreApp,Version=v7.0)
+Microsoft (R) Test Execution Command Line Tool Version 17.6.3 (x64)
+Copyright (c) Microsoft Corporation.  All rights reserved.
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+Passed!  - Failed:     0, Passed:     3, Skipped:     0, Total:     3, Duration: 50 ms - BankTests.dll (net7.0)
+
+Calculating coverage result...
+  Generating report 'C:\Dev\UnitTesting\UnitTestingBank\BankTests\coverage.json'
++-----------------+--------+--------+--------+
+| Module          | Line   | Branch | Method |
++-----------------+--------+--------+--------+
+| UnitTestingBank | 51.72% | 66.66% | 42.85% |
++-----------------+--------+--------+--------+
+
++---------+--------+--------+--------+
+|         | Line   | Branch | Method |
++---------+--------+--------+--------+
+| Total   | 51.72% | 66.66% | 42.85% |
++---------+--------+--------+--------+
+| Average | 51.72% | 66.66% | 42.85% |
++---------+--------+--------+--------+
+
+PS C:\Dev\UnitTesting\UnitTestingBank\BankTests> dotnet test --collect:"XPlat Code Coverage"
+  Determining projects to restore...
+  Restored C:\Dev\UnitTesting\UnitTestingBank\UnitTestingBank\UnitTestingBank
+  .csproj (in 136 ms).
+  Restored C:\Dev\UnitTesting\UnitTestingBank\BankTests\BankTests.csproj (in
+  488 ms).
+C:\Dev\UnitTesting\UnitTestingBank\UnitTestingBank\BankAccount.cs(11,17): war
+ning CS8618: Non-nullable field '_customerName' must contain a non-null value
+ when exiting constructor. Consider declaring the field as nullable. [C:\Dev\
+UnitTesting\UnitTestingBank\UnitTestingBank\UnitTestingBank.csproj]
+  UnitTestingBank -> C:\Dev\UnitTesting\UnitTestingBank\UnitTestingBank\bin\D
+  ebug\net7.0\UnitTestingBank.dll
+  BankTests -> C:\Dev\UnitTesting\UnitTestingBank\BankTests\bin\Debug\net7.0\
+  BankTests.dll
+Test run for C:\Dev\UnitTesting\UnitTestingBank\BankTests\bin\Debug\net7.0\BankTests.dll (.NETCoreApp,Version=v7.0)
+Microsoft (R) Test Execution Command Line Tool Version 17.6.3 (x64)
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+
+Passed!  - Failed:     0, Passed:     3, Skipped:     0, Total:     3, Duration: 67 ms - BankTests.dll (net7.0)
+
+Attachments:
+  C:\Dev\UnitTesting\UnitTestingBank\BankTests\TestResults\ab05e04f-916a-4817-99c2-3e296ec19092\coverage.cobertura.xml
+PS C:\Dev\UnitTesting\UnitTestingBank\BankTests> dotnet tool install -g dotnet-reportgenerator-globaltool
+You can invoke the tool using the following command: reportgenerator
+Tool 'dotnet-reportgenerator-globaltool' (version '5.1.26') was successfully installed.
+PS C:\Dev\UnitTesting\UnitTestingBank\BankTests> reportgenerator -reports:"C:\Dev\UnitTesting\UnitTestingBank\BankTests\TestResults\ab05e04f-916a-4817-99c2-3e296ec19092\coverage.cobertura.xml" -targetdir:"coverageresults" -reporttypes:Html
+2023-10-12T00:30:47: Arguments
+2023-10-12T00:30:47:  -reports:C:\Dev\UnitTesting\UnitTestingBank\BankTests\TestResults\ab05e04f-916a-4817-99c2-3e296ec19092\coverage.cobertura.xml
+2023-10-12T00:30:47:  -targetdir:coverageresults
+2023-10-12T00:30:47:  -reporttypes:Html
+2023-10-12T00:30:47: Writing report file 'coverageresults\index.html'
+2023-10-12T00:30:47: Report generation took 0.2 seconds
+PS C:\Dev\UnitTesting\UnitTestingBank\BankTests>
